@@ -4,23 +4,14 @@ pipeline {
           stage('Cleanup Workspace') {
             steps {
                 cleanWs()
-                sh """
+                bat """
                 echo "Cleaned Up Workspace For Project"
                 """
             }
         }
-        //  stage('Code Checkout') {
-        //     steps {
-        //         checkout([
-        //             $class: 'GitSCM', 
-        //             branches: [[name: '*/main']], 
-        //             userRemoteConfigs: [[url: 'https://github.com/dev-fatimalatif/jenkins-multibranch-pipeline.git']]
-        //         ])
-        //     }
-        // }
         stage(' Unit Testing') {
             steps {
-                sh """
+                bat """
                 echo "Running Unit Tests"
                 """
             }
@@ -28,7 +19,7 @@ pipeline {
 
         stage('Code Analysis') {
             steps {
-                sh """
+                bat """
                 echo "Running Code Analysis"
                 """
             }
@@ -38,11 +29,11 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                sh """
+                bat """
                 echo "Building Artifact"
                 """
 
-                sh """
+                bat """
                 echo "Deploying Code"
                 """
             }
@@ -53,13 +44,13 @@ pipeline {
                 branch 'main'
             }
             steps {
-                sh """
+                bat """
                 echo "Building Artifact for Staging and Pre-Prod Environments"
                 """
-                sh """
+                bat """
                 echo "Deploying to Staging Environment"
                 """
-                sh """
+                bat """
                 echo "Deploying to Pre-Prod Environment"
                 """
             }
