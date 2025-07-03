@@ -9,15 +9,15 @@ pipeline {
                 """
             }
         }
-         stage('Code Checkout') {
-            steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/dev-fatimalatif/jenkins-multibranch-pipeline.git']]
-                ])
-            }
-        }
+        //  stage('Code Checkout') {
+        //     steps {
+        //         checkout([
+        //             $class: 'GitSCM', 
+        //             branches: [[name: '*/main']], 
+        //             userRemoteConfigs: [[url: 'https://github.com/dev-fatimalatif/jenkins-multibranch-pipeline.git']]
+        //         ])
+        //     }
+        // }
         stage(' Unit Testing') {
             steps {
                 sh """
