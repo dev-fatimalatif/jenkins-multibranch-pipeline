@@ -45,6 +45,20 @@ pipeline {
                 """
             }
         }
+          stage('Build Deploy Code') {
+            when {
+                branch 'feature'
+            }
+            steps {
+                bat """
+                echo "Building Artifact for the feature branch"
+                """
+
+                bat """
+                echo "Deploying Code for the feature branch"
+                """
+            }
+        }
 
         stage('Deploy To Staging and Pre-Prod Code') {
             when {
