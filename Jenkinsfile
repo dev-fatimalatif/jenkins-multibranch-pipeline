@@ -45,7 +45,7 @@ pipeline {
                 """
             }
         }
-          stage('Build Deploy Code') {
+          stage('Build Deploy Code for feature branch') {
             when {
                 branch 'feature'
             }
