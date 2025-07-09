@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-          stage('Cleanup Workspace') {
-            steps {
-                cleanWs()
-                bat """
-                echo "Cleaned Up Workspace For Project"
-                """
-            }
-        }
+        //   stage('Cleanup Workspace') {
+        //     steps {
+        //         cleanWs()
+        //         bat """
+        //         echo "Cleaned Up Workspace For Project"
+        //         """
+        //     }
+        // }
         stage(' Unit Testing') {
             steps {
                 bat """
