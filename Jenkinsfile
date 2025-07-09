@@ -23,6 +23,13 @@ pipeline {
                 """
             }
         }
+        stage(' Unit Testing') {
+            steps {
+                bat """
+                echo "Running Unit Tests for the testing dev branch"
+                """
+            }
+        }
       
         stage('Testing') {
             steps {
