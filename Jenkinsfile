@@ -12,10 +12,18 @@ pipeline {
         stage(' Unit Testing') {
             steps {
                 bat """
-                echo "Running Unit Tests"
+                echo "Running Unit Tests for the feature dev branch"
                 """
             }
         }
+      
+        stage('Testing') {
+            steps {
+                echo "Running Unit Tests"
+                bat 'scripts\\feature.bat'
+            }
+        }
+
 
         stage('Code Analysis') {
             steps {
@@ -35,6 +43,20 @@ pipeline {
 
                 bat """
                 echo "Deploying Code"
+                """
+            }
+        }
+          stage('Build Deploy Code for feature branch') {
+            when {
+                branch 'feature'
+            }
+            steps {
+                bat """
+                echo "Building Artifact for the feature branch"
+                """
+
+                bat """
+                echo "Deploying Code for the feature branch"
                 """
             }
         }
