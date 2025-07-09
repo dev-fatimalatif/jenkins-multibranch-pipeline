@@ -26,7 +26,7 @@ pipeline {
         stage('Testing') {
             steps {
                 echo "Running Unit Tests"
-                bat 'script\\feature.bat'
+                bat 'scripts\\feature.bat'
             }
         }
 
