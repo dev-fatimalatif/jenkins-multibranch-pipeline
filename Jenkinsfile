@@ -16,13 +16,20 @@ pipeline {
                 """
             }
         }
-        stage(' Testing') {
+        // stage(' Testing') {
+        //     steps {
+        //         bat """
+        //         echo "Running Unit Tests"
+        //         """
+        //     }
+        // }
+        stage('Testing') {
             steps {
-                bat """
                 echo "Running Unit Tests"
-                """
+                bat 'script\\feature.bat'
             }
         }
+
 
         stage('Code Analysis') {
             steps {
