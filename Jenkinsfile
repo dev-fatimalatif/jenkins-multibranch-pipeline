@@ -33,7 +33,7 @@ pipeline {
       
         stage('Testing') {
             steps {
-                echo "Running Unit Tests"
+                echo "the test is running"
                 bat 'scripts\\feature.bat'
             }
         }
