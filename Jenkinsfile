@@ -12,21 +12,21 @@ pipeline {
         stage(' Unit Testing') {
             steps {
                 bat """
-                echo "Running Unit Tests for the feature dev branch"
+                echo "Running Unit Tests for the feature dev develop branch"
                 """
             }
         }
         stage(' Unit Testing') {
             steps {
                 bat """
-                echo "Running Unit Tests for the develop dev branch"
+                echo "Running Unit Tests for the develop dev develop branch"
                 """
             }
         }
         stage(' Unit Testing') {
             steps {
                 bat """
-                echo "Running Unit Tests for the testing dev branch"
+                echo "Running Unit Tests for the testing dev develop branch"
                 """
             }
         }
